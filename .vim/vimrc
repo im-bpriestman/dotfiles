@@ -1,0 +1,25 @@
+set nocompatible
+filetype plugin on
+syntax on
+set colorcolumn=80
+
+" List invisible chracters (Dom)
+set list                  " Show invisible characters
+set listchars=tab:›\ ,eol:¬,trail:⋅ "Set the characters for the invisibles
+
+" Highlight trailing whitespace (Paul)
+:highlight TrailWhitespace ctermbg=red guibg=red
+:match TrailWhitespace /\s\+$\| \+\ze\t/
+
+""" Line numbers
+" Pressing Control-N twice to toggle line numbers
+" http://vim.wikia.com/wiki/Display_line_numbers
+:nmap <C-N><C-N> :set number! relativenumber!<CR>
+
+""" Toggle spell checking with ctrl-s ctrl-s
+set spelllang=en_gb
+nmap <silent> <leader>s :set spell!<CR>
+" Automatically enable spell check on .md files
+" https://robots.thoughtbot.com/vim-spell-checking
+autocmd BufRead,BufNewFile *.md setlocal spell
+
