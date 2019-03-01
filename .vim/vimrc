@@ -1,6 +1,9 @@
+""" vimwiki settings
 set nocompatible
 filetype plugin on
 syntax on
+
+""" Set line length
 set colorcolumn=80
 
 " List invisible chracters (Dom)
