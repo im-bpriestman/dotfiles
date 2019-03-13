@@ -75,12 +75,12 @@
                "x": 2,
                "y": 18
             },
-            "name": "WorkFlowy",
+            "name": "Tasks",
             "percent": 0.5,
             "swallows": [
                {
-               "class": "^WorkFlowy$",
-               "instance": "^workflowy$"
+               "class": "^Tasks$",
+               "instance": "^crx_dkeoepkaiiooobhhjadfnndaljbdjmaa$"
                }
             ],
             "type": "con"
