@@ -181,11 +181,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # screen capture
 bindsym $mod+Print exec /usr/bin/gnome-screenshot -i
 # workspaces
-exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/comms.json'"
-exec --no-startup-id slack
-exec --no-startup-id sf-mail
-exec --no-startup-id sf-tweetdeck
-exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/time.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/time.json'"
 #exec --no-startup-id sf-waffle
 exec --no-startup-id sf-harvest
 exec --no-startup-id sf-calendar
@@ -195,6 +191,11 @@ exec --no-startup-id sf-hubspot
 exec --no-startup-id "find ~/lib -name 'WorkFlowy*' -exec ln -Tfs \{\} ~/bin/workflowy \;"
 #exec --no-startup-id workflowy
 #exec --no-startup-id sf-apn
+exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/comms.json'"
+exec --no-startup-id slack
+exec --no-startup-id sf-mail
+exec --no-startup-id sf-tweetdeck
+workspace 2 output eDP1
 # Floaters
 for_window [title="Slack Call Minipanel"] floating enable border normal
 for_window [title="^Authy$"] floating enable border normal
