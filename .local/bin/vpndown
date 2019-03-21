@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# helper script to kill multiple vpn connections
+
+nmcli connection show --active |  grep vpn | awk '{print $1}' | xargs -l nmcli connection down
