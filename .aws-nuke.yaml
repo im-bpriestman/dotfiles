@@ -1,0 +1,72 @@
+regions:
+- global
+# aws ec2 describe-regions | jq '.[][].RegionName' -r | sed 's/.*/- \0/'
+- eu-north-1
+- ap-south-1
+- eu-west-3
+- eu-west-2
+- eu-west-1
+- ap-northeast-2
+- ap-northeast-1
+- sa-east-1
+- ca-central-1
+- ap-southeast-1
+- ap-southeast-2
+- eu-central-1
+- us-east-1
+- us-east-2
+- us-west-1
+- us-west-2
+
+account-blacklist:
+- "999999999999" # production
+
+resource-types:
+  # don't nuke S3 bucket objects, just nuke bckets
+  excludes:
+  - S3Object
+
+accounts:
+  "767218075950": # sf-ben-test
+    presets:
+      - readyscalefoundation
+      - bensdefaults
+  "420500898610": # sf-ben-live
+    presets:
+      - readyscalefoundation
+      - bensdefaults
+  "342405596587":
+    presets:
+      - readyscalefoundation
+      - bensdefaults
+
+
+presets:
+  readyscalefoundation:
+    filters:
+      CloudFormationStack:
+        - "readyscale-foundation-cloudtrail"
+        - "readyscale-foundation-initial-iam"
+      CloudTrailTrail:
+        - type: glob
+          value: "readyscale-foundation-cloudtrail-CloudtrailGlobal-*"
+      IAMRole:
+        - "OrganizationAccountAccessRole"
+        - "ScaleFactoryUser"
+        - "SecurityAudit"
+        - "TerraformUser"
+      IAMRolePolicy:
+        - "OrganizationAccountAccessRole -> AdministratorAccess"
+        - "ScaleFactoryUser -> cloudtrail_readyscale_foundation_ro"
+        - "ScaleFactoryUser -> iam_superadministrator_privilege_escalation_deny"
+        - "ScaleFactoryUser -> s3_security_logs_ro"
+        - "TerraformUser -> cloudtrail_readyscale_foundation_ro"
+        - "TerraformUser -> iam_superadministrator_privilege_escalation_deny"
+        - "TerraformUser -> s3_security_logs_ro"
+      IAMRolePolicyAttachment:
+        - "ScaleFactoryUser -> AdministratorAccess"
+        - "TerraformUser -> AdministratorAccess"
+  bensdefaults:
+    filters:
+      EC2KeyPair:
+        - "ben@SFLaptop"
