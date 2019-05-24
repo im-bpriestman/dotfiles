@@ -14,5 +14,5 @@ connection=$(nmcli -t --fields name,type,active c show | grep vpn | sed 's/:vpn:
 if [[ $connection == *"(Active)"* ]]; then
   nmcli c down "${connection// \(Active\)/}"
 else
-  nmcli c up "$connection"
+  nmcli c up "$connection" --ask
 fi

@@ -163,6 +163,7 @@ exec --no-startup-id blueman-applet
 # dropbox
 exec --no-startup-id dropbox start
 # lock screen
+exec --no-startup-id xautolock -time 5 -locker "scrot -q 40 -z /tmp/screenshot.png -e 'convert /tmp/screenshot.png -blur 6x6 /tmp/screenshot.png' ; i3lock --ignore-empty-password --image='/tmp/screenshot.png'"
 bindsym $mod+Shift+u exec i3lock
 # Disable click on tap
 exec --no-startup-id synclient TapButton1=0 TapButton2=0
@@ -181,21 +182,21 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # screen capture
 bindsym $mod+Print exec /usr/bin/gnome-screenshot -i
 # workspaces
-exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/time.json'"
+exec --no-startup-id "find ~/lib -name 'WorkFlowy*' -exec ln -Tfs \{\} ~/bin/workflowy \;"
+#exec --no-startup-id workflowy
+#exec --no-startup-id sf-apn
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/comms.json'"
+exec --no-startup-id slack
+exec --no-startup-id sf-mail
+exec --no-startup-id sf-tweetdeck
+#workspace 1 output eDP1
+exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/time.json'"
 #exec --no-startup-id sf-waffle
 exec --no-startup-id sf-harvest
 exec --no-startup-id sf-calendar
 exec --no-startup-id sf-float
 exec --no-startup-id sf-hubspot
 #exec --no-startup-id sf-trello
-exec --no-startup-id "find ~/lib -name 'WorkFlowy*' -exec ln -Tfs \{\} ~/bin/workflowy \;"
-#exec --no-startup-id workflowy
-#exec --no-startup-id sf-apn
-exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/comms.json'"
-exec --no-startup-id slack
-exec --no-startup-id sf-mail
-exec --no-startup-id sf-tweetdeck
-workspace 2 output eDP1
 # Floaters
 for_window [title="Slack Call Minipanel"] floating enable border normal
 for_window [title="^Authy$"] floating enable border normal
