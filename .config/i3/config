@@ -201,6 +201,7 @@ exec --no-startup-id sf-hubspot
 for_window [title="Slack Call Minipanel"] floating enable border normal
 for_window [title="^Authy$"] floating enable border normal
 for_window [class="^keepassxc$"] floating enable border normal
+for_window [class="^XCalc$"] floating enable border normal
 # Productivity
 exec --no-startup-id insync start
 # Display modes

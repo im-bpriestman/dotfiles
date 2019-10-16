@@ -29,19 +29,29 @@ resource-types:
 accounts:
   "767218075950": # sf-ben-test
     presets:
+      - awsmanaged
       - readyscalefoundation
       - bensdefaults
   "420500898610": # sf-ben-live
     presets:
+      - awsmanaged
       - readyscalefoundation
       - bensdefaults
   "342405596587":
     presets:
+      - awsmanaged
       - readyscalefoundation
       - bensdefaults
 
 
 presets:
+  awsmanaged:
+    # Some AWS-managed resources cannot be nuked
+    # let's not clutter the output with these
+    filters:
+      KMSAlias:
+        - type: glob
+          value: "alias/aws/*"
   readyscalefoundation:
     filters:
       CloudFormationStack:

@@ -119,8 +119,8 @@ fi
 
 #### user edits
 
-# go
-export PATH="/usr/lib/go-1.10/bin:$HOME/go/bin:$PATH"
+# brew
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # version managers
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -128,6 +128,8 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 eval "$(rbenv init -)"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+# go
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # vagrant stuff
 export VAGRANT_DEFAULT_PROVIDER=libvirt
@@ -141,13 +143,9 @@ export PS1=$(echo $PS1 | sed 's/\\\$$/\n\$/')
 # kube things
 source <(kubectl completion bash)
 source <(minikube completion bash)
-source <(kubicorn completion bash)
 
 # command completion
 complete -C aws_completer aws
-
-# aws-vault
-export AWS_VAULT_BACKEND=secret-service
 
 
 # tabtab source for serverless package
@@ -159,3 +157,4 @@ export AWS_VAULT_BACKEND=secret-service
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [ -f /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/slss.bash ] && . /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/slss.bash
+

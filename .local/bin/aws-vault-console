@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Obtain all AWS profiles
+config=$(grep -oP '\[profile \K(.*?)(?=\])' .aws/config | sort | dmenu -i "$@")
+
+# If no connection was selected, abort now.
+[[ -n $config ]] || exit
+
+# Profile selected, use aws-vault to open a firefox container with a console
+#FIREFOX=/opt/firefox/firefox-bin
+FIREFOX=firefox
+LOGIN_URL=$(aws-vault login --debug --prompt=zenity --stdout "$config" )
+ENCODED_URL="${LOGIN_URL//&/%26}"
+URI_HANDLER="ext+container:name=$config&url=${ENCODED_URL}"
+"${FIREFOX}" "${URI_HANDLER}"
+
