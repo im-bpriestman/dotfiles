@@ -3,7 +3,7 @@ set nocompatible
 filetype plugin on
 syntax on
 let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+                      \ 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1}]
 
 """ Set line length
 set colorcolumn=80
