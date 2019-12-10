@@ -158,3 +158,5 @@ complete -C aws_completer aws
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [ -f /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/slss.bash ] && . /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/slss.bash
 
+
+complete -C /home/benpriestman/.tfenv/versions/0.12.12/terraform terraform
