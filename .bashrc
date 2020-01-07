@@ -119,17 +119,10 @@ fi
 
 #### user edits
 
-# brew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
 # version managers
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.tfenv/bin:$PATH"
 eval "$(rbenv init -)"
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-# go
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # vagrant stuff
 export VAGRANT_DEFAULT_PROVIDER=libvirt
@@ -138,7 +131,7 @@ export SF_VAGRANT_VIRTUALBOX_INTNET=1
 # environment settings
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export PS1=$(echo $PS1 | sed 's/\\\$$/\n\$/')
+export PS1=$(echo $PS1 | sed 's/\\\$$/\\n\$/')
 
 # kube things
 source <(kubectl completion bash)
@@ -146,17 +139,3 @@ source <(minikube completion bash)
 
 # command completion
 complete -C aws_completer aws
-
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/serverless.bash ] && . /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/sls.bash ] && . /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/sls.bash
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[ -f /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/slss.bash ] && . /srv/checkouts/github.com/shzshi/aws-lambda-dynamodb-mytasks/node_modules/tabtab/.completions/slss.bash
-
-
-complete -C /home/benpriestman/.tfenv/versions/0.12.12/terraform terraform
