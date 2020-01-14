@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
+# requires:
+#   - https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/
+#   - https://addons.mozilla.org/en-GB/firefox/addon/open-url-in-container/
+
 # Obtain all AWS profiles
-config=$(grep -oP '\[profile \K(.*?)(?=\])' .aws/config | sort | dmenu -i "$@")
+config=$(grep -oE '\[profile ([^\]+)]' .aws/config | sed 's/\[profile \(.*\)\]/\1/' | sort | dmenu -i "$@")
 
 # If no connection was selected, abort now.
 [[ -n $config ]] || exit
 
 # Profile selected, use aws-vault to open a firefox container with a console
-#FIREFOX=/opt/firefox/firefox-bin
-FIREFOX=firefox
+FIREFOX=/Applications/Firefox.app/Contents/MacOS/firefox-bin
 LOGIN_URL=$(aws-vault login --debug --prompt=zenity --stdout "$config" )
 ENCODED_URL="${LOGIN_URL//&/%26}"
 URI_HANDLER="ext+container:name=$config&url=${ENCODED_URL}"
