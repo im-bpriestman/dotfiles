@@ -124,9 +124,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.tfenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# vagrant stuff
-export VAGRANT_DEFAULT_PROVIDER=libvirt
-export SF_VAGRANT_VIRTUALBOX_INTNET=1
+# security
+export AWS_VAULT_KEYCHAIN_NAME=login
 
 # environment settings
 export VISUAL=vim
@@ -139,3 +138,6 @@ source <(minikube completion bash)
 
 # command completion
 complete -C aws_completer aws
+
+#gpg
+export GPG_TTY=$(tty)
