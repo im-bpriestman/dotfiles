@@ -5,7 +5,7 @@
 #   - https://addons.mozilla.org/en-GB/firefox/addon/open-url-in-container/
 
 # Obtain all AWS profiles
-config=$(grep -oE '\[profile ([^\]+)]' .aws/config | sed 's/\[profile \(.*\)\]/\1/' | sort | dmenu -i "$@")
+config=$(grep -oE '\[profile ([^\]+)]' ~/.aws/config | sed 's/\[profile \(.*\)\]/\1/' | sort | dmenu -i "$@")
 
 # If no connection was selected, abort now.
 [[ -n $config ]] || exit

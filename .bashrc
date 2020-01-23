@@ -119,6 +119,9 @@ fi
 
 #### user edits
 
+# local scripts
+export PATH="$HOME/.local/bin/:$PATH"
+
 # version managers
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.tfenv/bin:$PATH"
@@ -126,6 +129,7 @@ eval "$(rbenv init -)"
 
 # security
 export AWS_VAULT_KEYCHAIN_NAME=login
+export GPG_TTY=$(tty)
 
 # environment settings
 export VISUAL=vim
@@ -139,5 +143,5 @@ source <(minikube completion bash)
 # command completion
 complete -C aws_completer aws
 
-#gpg
-export GPG_TTY=$(tty)
+# Docker
+export DOCKER_BUILDKIT=1

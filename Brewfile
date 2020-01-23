@@ -18,6 +18,7 @@ cask "aws-vault"
 cask "visual-studio-code"
 cask "docker"
 brew "packer"
+brew "composer"
 
 #k8s
 brew "kubectl"
@@ -33,4 +34,5 @@ brew "dmenu"
 brew "zenity"
 cask "gpg-suite"
 brew "tmux"
+brew "watch"
 
