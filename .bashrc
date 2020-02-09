@@ -142,6 +142,7 @@ source <(minikube completion bash)
 
 # command completion
 complete -C aws_completer aws
+source /dev/stdin <<<"$(kitty + complete setup bash)"
 
 # Docker
 export DOCKER_BUILDKIT=1

@@ -10,6 +10,9 @@ brew "awscli"
 brew "aws-cdk"
 cask "aws-vault"
 
+# nerd   tooling
+cask "kitty"
+
 #Local dev
 #older version of vagratn installed manually
 #cask "vagrant"
