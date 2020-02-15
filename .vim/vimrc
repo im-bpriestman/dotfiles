@@ -5,8 +5,8 @@ syntax on
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md', 'auto_tags': 1}]
 
-""" Set line length
-set colorcolumn=80
+""" default indentation
+set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " List invisible chracters (Dom)
 set list                  " Show invisible characters
