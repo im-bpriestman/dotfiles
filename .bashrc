@@ -43,12 +43,6 @@ eval "$(rbenv init -)"
 # security
 export GPG_TTY=$(tty)
 
-# git
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
-export GIT_PS1_SHOWDIRTYSTATE=1
-#export PS1='\w$(__git_ps1 " (%s)")\$ '
-
 # AWS Tooling
 complete -C aws_completer aws
 export AWS_VAULT_KEYCHAIN_NAME=login
@@ -68,11 +62,15 @@ source /dev/stdin <<<"$(kitty + complete setup bash)"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# Prompt
+# git
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-export PROMPT_COMMAND='__git_ps1 "\u@\h:\w\\n" "\\\$ "'
+export COMPOSER_AUTH="{\"github-oauth\":$(composer config -g github-oauth)}"
+
+# Prompt
 export PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\n" "\\\$ "'
-#export PS1=$(echo $PS1 | sed 's/\\\$$/\\n\$/')
 
