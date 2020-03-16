@@ -69,7 +69,10 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+# Auth tokens
 export COMPOSER_AUTH="{\"github-oauth\":$(composer config -g github-oauth)}"
+export NPM_TOKEN="$(grep registry.npmjs.org ~/.npmrc | cut -d '=' -f2)"
 
 # Prompt
 export PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\n" "\\\$ "'

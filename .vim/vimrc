@@ -9,7 +9,7 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " List invisible chracters (Dom)
-set list                  " Show invisible characters
+"set list                  " Show invisible characters
 set listchars=tab:›\ ,eol:¬,trail:⋅ "Set the characters for the invisibles
 
 " Highlight trailing whitespace (Paul)
