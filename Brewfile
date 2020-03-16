@@ -9,9 +9,11 @@ brew "tfenv"
 brew "awscli"
 brew "aws-cdk"
 cask "aws-vault"
+cask "session-manager-plugin"
 
 # nerd   tooling
 cask "kitty"
+brew "jq"
 
 #Local dev
 #older version of vagratn installed manually
@@ -22,6 +24,8 @@ cask "visual-studio-code"
 cask "docker"
 brew "packer"
 brew "composer"
+cask "atom"
+brew "vim"
 
 #k8s
 brew "kubectl"
@@ -38,4 +42,4 @@ brew "zenity"
 cask "gpg-suite"
 brew "tmux"
 brew "watch"
-
+brew "telnet"
