@@ -26,6 +26,7 @@ brew "packer"
 brew "composer"
 cask "atom"
 brew "vim"
+brew "github/gh/gh"
 
 #k8s
 brew "kubectl"
@@ -43,3 +44,4 @@ cask "gpg-suite"
 brew "tmux"
 brew "watch"
 brew "telnet"
+brew "wget"
