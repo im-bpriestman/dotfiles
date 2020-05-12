@@ -74,6 +74,8 @@ export GIT_PS1_SHOWUNTRACKEDFILES=true
 export COMPOSER_AUTH="{\"github-oauth\":$(composer config -g github-oauth)}"
 export NPM_TOKEN="$(grep registry.npmjs.org ~/.npmrc | cut -d '=' -f2)"
 
-# Prompt
+# Bash
 export PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\\n" "\\\$ "'
+HISTSIZE=5000
+HISTFILESIZE=10000
 
