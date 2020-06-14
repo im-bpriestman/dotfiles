@@ -46,7 +46,7 @@ export GPG_TTY=$(tty)
 # AWS Tooling
 complete -C aws_completer aws
 export AWS_VAULT_KEYCHAIN_NAME=login
-
+eval "$(aws-vault --completion-script-bash)"
 
 # kube things
 source <(kubectl completion bash)
