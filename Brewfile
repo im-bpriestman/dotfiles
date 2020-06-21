@@ -14,6 +14,7 @@ cask "session-manager-plugin"
 # nerd   tooling
 cask "kitty"
 brew "jq"
+brew "bash-completion"
 
 #Local dev
 cask "visual-studio-code"
@@ -33,6 +34,7 @@ brew "github/gh/gh"
 ##containers
 cask "docker"
 brew "docker-completion"
+brew "docker-compose-completion"
 brew "kubectl"
 brew "minikube"
 

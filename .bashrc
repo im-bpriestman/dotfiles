@@ -48,10 +48,6 @@ complete -C aws_completer aws
 export AWS_VAULT_KEYCHAIN_NAME=login
 eval "$(aws-vault --completion-script-bash)"
 
-# kube things
-source <(kubectl completion bash)
-source <(minikube completion bash)
-
 # Docker
 export DOCKER_BUILDKIT=1
 
