@@ -16,21 +16,33 @@ cask "kitty"
 brew "jq"
 
 #Local dev
-#older version of vagratn installed manually
-#cask "vagrant"
-#older version of virtualbox installed manually
-#cask "virtualbox"
 cask "visual-studio-code"
-cask "docker"
 brew "packer"
 brew "composer"
 cask "atom"
 brew "vim"
 brew "github/gh/gh"
 
-#k8s
+#VMs
+#older version of vagratn installed manually
+#cask "vagrant"
+#older version of virtualbox installed manually
+#cask "virtualbox"
+
+
+##containers
+cask "docker"
+brew "docker-completion"
 brew "kubectl"
 brew "minikube"
+
+# net tooling
+brew "wrk"
+brew "httpstat"
+
+# comms
+# slack
+cask "krisp"
 
 # Browsers
 cask "firefox"
