@@ -79,7 +79,6 @@ export PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m
 HISTSIZE=5000
 HISTFILESIZE=10000
 set -o vi
-bind -m vi-command ".":yank-last-argument # or insert-last-argument
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
