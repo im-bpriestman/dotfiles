@@ -10,6 +10,11 @@ brew "awscli"
 brew "aws-cdk"
 cask "aws-vault"
 cask "session-manager-plugin"
+brew "awslogs"
+
+# low-level system things
+# HoRNDIS allows usb tethering with android phones
+cask "horndis"
 
 # nerd   tooling
 cask "kitty"
@@ -22,7 +27,7 @@ brew "packer"
 brew "composer"
 cask "atom"
 brew "vim"
-brew "github/gh/gh"
+brew "gh"
 
 #VMs
 #older version of vagratn installed manually
@@ -37,10 +42,13 @@ brew "docker-completion"
 brew "docker-compose-completion"
 brew "kubectl"
 brew "minikube"
+brew "helm"
+brew "kube-ps1"
 
 # net tooling
 brew "wrk"
 brew "httpstat"
+brew "speedtest-cli"
 
 # comms
 # slack
