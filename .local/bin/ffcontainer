@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+#set -x
+
+# requires:
+#   - https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/
+#   - https://addons.mozilla.org/en-GB/firefox/addon/open-url-in-container/
+
+# Open url in a Firefox container window
+FIREFOX=/Applications/Firefox.app/Contents/MacOS/firefox-bin
+INPUT_URL=$(cat --)
+ENCODED_URL="${INPUT_URL//&/%26}"
+CONTAINER_NAME="${1:-unnamed}"
+URI_HANDLER="ext+container:name=${CONTAINER_NAME}&url=${ENCODED_URL}"
+"${FIREFOX}" "${URI_HANDLER}"
+
