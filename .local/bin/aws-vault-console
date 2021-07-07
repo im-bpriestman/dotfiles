@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+set -x
 # requires:
 #   - https://addons.mozilla.org/en-GB/firefox/addon/multi-account-containers/
 #   - https://addons.mozilla.org/en-GB/firefox/addon/open-url-in-container/

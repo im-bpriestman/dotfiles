@@ -4,6 +4,7 @@ brew "yadm"
 #Version managers
 brew "rbenv"
 brew "tfenv"
+brew "nvm"
 
 #AWS tools
 brew "awscli"
@@ -57,6 +58,9 @@ cask "krisp"
 # Browsers
 cask "firefox"
 cask "google-chrome"
+
+# Productivity
+cask "workflowy"
 
 #Make like linux
 cask "xquartz"

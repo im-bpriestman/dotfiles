@@ -537,6 +537,10 @@
             }
           }
         }
+      },
+      "nvm": {
+        "version": "0.37.2",
+        "bottle": false
       }
     },
     "cask": {
@@ -614,6 +618,12 @@
         "options": {
           "full_name": "horndis"
         }
+      },
+      "workflowy": {
+        "version": "1.3.5-13530",
+        "options": {
+          "full_name": "workflowy"
+        }
       }
     }
   },
@@ -622,7 +632,7 @@
       "mojave": {
         "HOMEBREW_VERSION": "2.7.2",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "c506a8835c12f705126a2e130deb730f2c69f8aa",
+        "Homebrew/homebrew-core": "288c47e065b4c118f8fa7c8e58f5451aedb46e59",
         "CLT": "11.3.0.0.1.1574140115",
         "Xcode": "11.5",
         "macOS": "10.14.6"
